@@ -1,10 +1,11 @@
-import { Loader, SearchBar } from "@/components";
+import { SearchBar } from "@/components";
 import { fetchMovies } from "@/utils/api";
 import Link from "next/link";
 
 const Movies = async ({searchParams}:any) => {
   
-  const res = await fetchMovies(searchParams.title?.split(" ").join("+") || "Lord+Of+The+Rings");
+  // const res = await fetchMovies(searchParams.title?.split(" ").join("+") || "Lord+Of+The+Rings");
+  const res = await fetchMovies(JSON.stringify(searchParams.title) || "Lord+Of+The+Rings");
   const data = res.Search;
 
   return (

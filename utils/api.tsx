@@ -1,4 +1,4 @@
-const apiKey = "8eab43e7";
+const apiKey = process.env.API_KEY;
 const baseUrl = `http://www.omdbapi.com/?apikey=${apiKey}`
 
 export const fetchMovies = async (title:string, year?:number) => {

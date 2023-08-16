@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react'
 
 export const SearchBar = () => {
 
-    const [title, setTitle] = useState("Harry Potter");
+    const [title, setTitle] = useState("Lord Of The Rings");
     const router = useRouter();
 
     const handleSubmit = (e:React.FormEvent<HTMLFormElement>) => {

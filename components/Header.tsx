@@ -8,7 +8,6 @@ export const Header = () => {
   const navLinks = [
     {title: "Home", path: "/"},
     {title: "Movies", path: "/movies"},
-    {title: "About", path: "/about"},
     {title: "Contact", path: "/contact"},
   ]
 
@@ -36,11 +35,12 @@ export const Header = () => {
         {/* Mobile Nav */}
         {
         nav && (
-        <nav className="md:hidden flex flex-col gap-3 absolute top-[110%] left-0 z-20 px-10 pt-10 bg-bg w-[300px] h-[85vh]">
+        <nav className="md:hidden flex flex-col gap-3 absolute top-[110%] left-0 z-20 px-10 pt-10 bg-bg w-[300px] h-[100vh]">
           {navLinks.map((item, index) => (
             <Link href={item.path}
             key={index}
             className="text-lg text-text hover:text-primary"
+            onClick={() => setNav(false)}
             >
               {item.title}
             </Link>
@@ -53,7 +53,7 @@ export const Header = () => {
         <div className="md:hidden block" 
         onClick={() => setNav(prev => !prev)}
         >
-          <i className="fas fa-bars text-xl cursor-pointer"/>
+          <i className={`fas fa-${nav ? "times": "bars"} text-2xl cursor-pointer`}/>
         </div>
 
     </header>

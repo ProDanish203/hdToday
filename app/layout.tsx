@@ -1,12 +1,22 @@
-"use client"
 import { Footer, Header, Loader } from '@/components'
 import './globals.css'
 import type { Metadata } from 'next'
-import { useEffect, useState } from "react";
 
 export const metadata: Metadata = {
   title: 'HdToday | Watch Free Movies',
   description: 'Watch all your favourite movies free on just one stop.',
+  icons: {
+    icon: [
+      '/favicon.ico?v=1'
+    ],
+    apple: [
+      '/apple-touch-icon.png?v=1'
+    ],
+    shortcut:[
+      '/apple-touch-icon.png'
+    ]
+  },
+  manifest: '/site.webmanifest'
 }
 
 export default function RootLayout({
@@ -14,11 +24,6 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
-  const [loading, setLoading] = useState(true)
-  useEffect(() => {
-    const clear = setTimeout(() => setLoading(false), 500)
-    return () => clearTimeout(clear);
-  }, [])
   return (
     <html lang="en">
       <head>
@@ -26,13 +31,7 @@ export default function RootLayout({
       </head>
       <body>
         <Header/>
-        {
-        !loading ? children : (
-          <div className='min-h-[90vh] w-full flex items-center justify-center px-3 py-2'>
-            <Loader/>
-          </div>
-        )
-        }
+          {children}
         <Footer/>
       </body>
     </html>
