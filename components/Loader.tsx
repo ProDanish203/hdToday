@@ -1,7 +1,7 @@
-export const Loader = () => {
+export const Loader = ({dark}:any) => {
   return (
     <>
-    <div className="lds-ellipsis dark"><div></div><div></div><div></div><div></div></div>
+    <div className={`${!dark ? "lds-ellipsis": "lds-ellipsis dark"}`}><div></div><div></div><div></div><div></div></div>
     </>
   )
 }

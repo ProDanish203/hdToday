@@ -108,7 +108,7 @@ const Contact = () => {
               type='submit'
               className='bg-primary text-bg rounded-md shadow-sm max-sm:w-full px-10 py-2.5 flex gap-2 items-center justify-center'
               >
-                {loading ? <Loader/> : (
+                {loading ? <Loader dark={false}/> : (
                   <>
                   <i className='fas fa-paper-plane'></i>
                   Send Message
