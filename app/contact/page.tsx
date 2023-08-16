@@ -1,4 +1,5 @@
 "use client"
+import { Loader } from '@/components';
 import axios from 'axios';
 import Image from 'next/image';
 import { FormEvent, useState } from 'react';
@@ -107,8 +108,13 @@ const Contact = () => {
               type='submit'
               className='bg-primary text-bg rounded-md shadow-sm max-sm:w-full px-10 py-2.5 flex gap-2 items-center justify-center'
               >
-                <i className='fas fa-paper-plane'></i>
-                Send Message
+                {loading ? <Loader/> : (
+                  <>
+                  <i className='fas fa-paper-plane'></i>
+                  Send Message
+                  </>
+                )}
+                
               </button>
             </div>
           </form>
