@@ -8,7 +8,7 @@ export default function Home() {
 
       <div className="flex-1">
         <h2 className="md:text-7xl text-4xl font-bold text-bg mb-5">
-        "Unleash the Cinematic Magic"
+        "Unleash the Magic"
         </h2>
 
         <p className="text-bg md:text-lg text-md">
